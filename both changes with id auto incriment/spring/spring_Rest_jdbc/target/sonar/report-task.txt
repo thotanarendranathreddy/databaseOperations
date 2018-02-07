@@ -1,0 +1,5 @@
+projectKey=com:spring_Rest_jdbc
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/com:spring_Rest_jdbc
+ceTaskId=AVt7J629_dnTWkxNNgQd
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVt7J629_dnTWkxNNgQd

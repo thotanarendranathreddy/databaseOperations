@@ -1,0 +1,217 @@
+<div>
+    <div class="container">
+        <div class="text-center">
+        			<div class="row">
+						            <div class="col-xs-2 ">
+						            <h3>ORDER BY</h3><input type="text"  class="form-control" placeholder="dept or name" #order>
+						            <h4>SET LIMIT</h4><input type="text"  class="form-control" placeholder="Ex:5" #no>
+									<button (click)="onOrder(order.value,no.value)" class="btn btn-warning buttonb">
+									<span class="glyphicon glyphicon-open"></span>send</button>
+									</div>
+
+									<div class="col-xs-8 ">
+									<h3>SEARCH</h3><input type="text"  class="form-control" placeholder="Provide ID" #temp>
+									<button (click)="onSearch(temp.value)" class="btn btn-info buttonb">
+									<span class="glyphicon glyphicon-search"></span>Search </button>
+									</div>
+											<div class="col-xs-2 ">
+									 			<button type="button" class="btn btn-info buttonb" data-toggle="modal" data-target="#myModal">
+												<span class="glyphicon glyphicon-open"></span>CREATE</button>
+											</div>
+							</div>
+
+		<!--         Create operation      -->
+																	<div class="container" >
+												  <!-- Trigger the modal with a button and button present up-->												 
+
+												  <!-- Modal -->
+												  <div class="modal fade" id="myModal" role="dialog">
+												    <div class="modal-dialog">
+
+												      <!-- Modal content-->
+												      <div class="modal-content">
+												        <div class="modal-header">
+												          <button type="button" class="close" data-dismiss="modal">&times;</button>
+												          <h4 class="modal-title">Record Creation</h4>
+												        </div>
+												        <div class="modal-body">
+
+
+												                        <div class="col-xs-6 ">
+												          <label for="idl">ID</label>
+												          <input type="text" class="form-control" id="idl" disabled placeholder="ID is AUTO GEN" #id>
+												                        </div>
+												                       <div class="col-xs-6 ">
+												          <label for="namel">NAME</label>
+												          <input type="text" class="form-control" id="namel" placeholder="Ex: nath" #name>
+												                       </div>
+												                       <div class="col-xs-6 ">
+												          <label for="salaryl">SALARY</label>
+												          <input type="text" class="form-control" id="salaryl" placeholder="Ex:66000 " #salary>
+												                       </div>
+												                       <div class="col-xs-6 ">
+												          <label for="deptl">DEPT</label>
+												          <input type="text" class="form-control" id="deptl" placeholder="Ex:ARMY " #dept>
+												                       </div>
+
+
+														  <button (click)="onCreate(id.value,name.value,salary.value,dept.value)" class="btn btn-warning">
+														   <span class="glyphicon glyphicon-open"></span>create</button>
+												          		<div *ngIf="rescrt">
+													  			<div class="alert alert-success">
+													  			<h4>{{ rescrt.status}}</h4>
+													  			</div>
+
+												              </div>
+												        </div>
+												        <div class="modal-footer">
+												          <button (click)="clearcrtpopup()" class="btn btn-default" data-dismiss="modal">Close</button>
+												        </div>
+												      </div>
+
+												    </div>
+												  </div>
+
+												</div>
+		<!-- 		Create operation END         -->
+		<!-- Delete operation -->
+												<div class="container" >
+
+												<!-- Button present in the iterator -->
+												  <!-- Modal -->
+												  <div class="modal fade" id="myModal2" role="dialog">
+												    <div class="modal-dialog">
+
+												      <!-- Modal content-->
+												      <div class="modal-content">
+												        <div class="modal-header">
+												          <button type="button" class="close" data-dismiss="modal">&times;</button>
+												          <h4 class="modal-title">DELETE Operation</h4>
+												        </div>
+												        						<div class="modal-body">
+																	         <h3> Are you sure you want to delete</h3>
+
+																		<button (click)="onDelete(delpopup)" class="btn btn-warning">
+												            <span class="glyphicon glyphicon-trash"></span>Delete</button>
+
+																		<div *ngIf="resdel">
+																		<div class="alert alert-success">
+																		<h4>{{resdel.status}}</h4>
+															            </div>
+															            </div>
+													  						  </div>
+												        <div class="modal-footer">
+												          <button (click)="cleardelpopup()" class="btn btn-default" data-dismiss="modal">Close</button>
+												        </div>
+												      </div>
+
+												    </div>
+												  </div>
+
+												</div>
+<!-- Delete operation END-->
+		<!-- update operation -->
+
+																					 <div class="container">
+																					 <!-- Button present in the iterator -->
+
+																					  <!-- Modal -->
+																					  <div class="modal fade" id="myModal1" role="dialog">
+																					    <div class="modal-dialog">
+
+																					      <!-- Modal content-->
+																					      <div class="modal-content">
+																					        <div class="modal-header">
+																					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+																					          <h4 class="modal-title">Record Updation</h4>
+																					        </div>
+																					        <div class="modal-body">
+
+																					                        <div class="col-xs-6 ">
+																					          <label for="idl1">ID</label>
+																					          <input type="text" class="form-control" id="idl1" disabled placeholder={{uppopup}} #id1>
+																					                          </div>
+																					        				       <div class="col-xs-6 ">
+																					          <label for="namel1">NAME</label>
+																					          <input type="text" class="form-control" id="namel1" placeholder="Ex: nath" #name1>
+																					                                </div>
+												                       										              <div class="col-xs-6 ">
+																						          <label for="salaryl1">SALARY</label>
+																						          <input type="text" class="form-control" id="salaryl1" placeholder="Ex:66000 " #salary1>
+																						                                   </div>
+												                       											            <div class="col-xs-6 ">
+																								     <label for="deptl1">DEPT</label>
+																								      <input type="text" class="form-control" id="deptl1" placeholder="Ex:ARMY " #dept1>
+																								                           </div>
+																					      <button (click)="onUpdate(uppopup,name1.value,salary1.value,dept1.value)" class="btn btn-warning">
+																					      <span class="glyphicon glyphicon-edit"></span>Update</button>
+																					              <div *ngIf="resup">
+																					          <div class="alert alert-success">
+																					          <h4>{{resup.status}}</h4>
+																					          </div>
+
+																					              </div>
+																					        </div>
+																					        <div class="modal-footer">
+																					          <button (click)="clearuppopup()" class="btn btn-default" data-dismiss="modal">Close</button>
+																					        </div>
+																					      </div>
+
+																					    </div>
+																					  </div>
+
+																					</div>
+						<!-- update operation END-->
+
+
+
+									<table  *ngIf="tableEnable" class = "table table-hover ">
+								  <tr class="danger">
+									<th>ID</th>
+									<th>NAME</th>
+									<th>SALARY</th>
+									<th>DEPT</th>
+								  </tr>
+
+								  <tbody  *ngFor="let item of pagedItems | paginate: { itemsPerPage: var2  , currentPage: p }">
+									  <tr>
+										<td >{{item.id}}</td>
+										<td class="info">{{item.name}}</td>
+										<td >{{item.salary}}</td>
+										<td class="info">{{item.dept}}</td>
+								<td><!-- Trigger the modal with a button -->
+								<button (click)="deletepopup(item.id)" class="btn btn-danger " data-toggle="modal" data-target="#myModal2">
+								<span class="glyphicon glyphicon-trash"></span>DELETE</button></td>
+												       <td> <!-- Trigger the modal with a button -->
+												       <button (click)="updatepopup(item.id)" class="btn btn-warning " data-toggle="modal" data-target="#myModal1">
+												       <span class="glyphicon glyphicon-edit"></span>UPDATE</button></td>
+										</tr>
+								   </tbody>
+								</table><br>
+								<pagination-controls (pageChange)="p = $event"></pagination-controls>
+ <div *ngIf="showstatus_search">
+<div class="container">
+  <h2>Alert</h2>
+  <div class="alert alert-danger alert-dismissible" id="myAlert">
+    {{status1}}
+    <a href="getAll" class="close">&times;</a>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+	$(".close").click(function(){
+        $("#myAlert").alert("close");
+    });
+
+});
+</script>
+</div>
+
+
+
+
+        </div>
+    </div>
+    <hr />
+
+</div>

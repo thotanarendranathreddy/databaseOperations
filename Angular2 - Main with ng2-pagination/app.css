@@ -1,0 +1,186 @@
+footer {
+     background-color: #f4511e;
+     padding: 25px;
+     color:#fff;
+   }
+
+.carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      min-height: 200px;
+    }
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
+      }
+    }
+.llogin{
+
+  background-color: #ffffff;
+}
+.addlogin{
+  background-color: #f4511e;
+}
+
+.navcol{
+  background-color: #5b5bff;
+  color: #ffffff;
+}
+.jumcol{
+background-color: #000000;
+color: #ffffff;
+}
+.txtjm1{
+  background-color: #008000;
+  color: #ffffff;
+}
+.txtjm2{
+background-color:  #ff4d88;
+color: #ffffff;
+}
+.txtjm3{
+  background-color: #ff8c1a;
+  color: #ffffff;
+}
+
+
+.button {
+  border-radius: 4px;
+  background-color: #ff8c1a;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 19px;
+  padding: 12px 20px 12px 40px;
+  width: 140px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+.buttonb {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.buttonb:hover {background-color: #3e8e41}
+
+.buttonb:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+
+
+a {
+    cursor: pointer;
+}
+
+
+.loginstyle {
+  position: relative;
+  z-index: 1;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.carousel-control.right, .carousel-control.left {
+     background-image: none;
+     color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;
+  }
+
+
+
+.nath
+{
+	background-color: #E74725;
+	color:#fff;
+	margin -top:30px;
+	padding-top:30px;
+}
+.nath1
+{
+border-top:1px solid #fff;
+margin-top:10px;
+padding-top:10px;
+color:#ffff80;
+
+}
+
+.nath2{
+
+text-align:right;
+list-style:none;
+}
+.nath2 li
+{
+
+display:inline;
+padding:0px 10px;
+}
+
+.nath2 li:not(:first-child):before
+{
+	content:'|';
+	padding:0px 10px;
+}
+.nath2 a
+{
+
+	color:#ffff00;
+}
+
+.nath2 a:hover
+{
+
+	color:#fff;
+	text-decoration: none;
+}

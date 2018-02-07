@@ -1,0 +1,230 @@
+<div>
+    <div class="container">
+        <div class="text-center">
+						            <div class="col-xs-3 ">
+						            <h3>ORDER BY</h3><input type="text" class="form-control" placeholder="dept or name" #order>
+									<button (click)="onOrder(order.value)" class="btn btn-warning">
+									<span class="glyphicon glyphicon-open"></span>send</button>
+									</div>
+									
+									<div class="col-xs-7 ">
+									<h3>SEARCH</h3><input type="text" class="form-control" placeholder="Provide ID" #temp>
+									<button (click)="onSearch(temp.value)" class="btn btn-info">
+									<span class="glyphicon glyphicon-search"></span>Search </button>	
+									</div>	
+		
+		<!--         Create operation      -->
+																	<div class="container" >
+												  <!-- Trigger the modal with a button -->
+												  <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">
+												  <span class="glyphicon glyphicon-open"></span>CREATE</button>
+												
+												  <!-- Modal -->
+												  <div class="modal fade" id="myModal" role="dialog">
+												    <div class="modal-dialog">
+												    
+												      <!-- Modal content-->
+												      <div class="modal-content">
+												        <div class="modal-header">
+												          <button type="button" class="close" data-dismiss="modal">&times;</button>
+												          <h4 class="modal-title">Record Creation</h4>
+												        </div>
+												        <div class="modal-body">
+												        
+												        
+												                        <div class="col-xs-6 ">
+												          <label for="idl">ID</label>
+												          <input type="text" class="form-control" id="idl" placeholder="Ex: 1" #id>
+												                        </div>
+												                       <div class="col-xs-6 ">
+												          <label for="namel">NAME</label>
+												          <input type="text" class="form-control" id="namel" placeholder="Ex: nath" #name>
+												                       </div>
+												                       <div class="col-xs-6 ">
+												          <label for="salaryl">SALARY</label>
+												          <input type="text" class="form-control" id="salaryl" placeholder="Ex:66000 " #salary>
+												                       </div>
+												                       <div class="col-xs-6 ">
+												          <label for="deptl">DEPT</label>
+												          <input type="text" class="form-control" id="deptl" placeholder="Ex:ARMY " #dept>
+												                       </div>
+												         
+												        
+														  <button (click)="onCreate(id.value,name.value,salary.value,dept.value)" class="btn btn-warning">
+														   <span class="glyphicon glyphicon-open"></span>create</button> 
+												          		<div *ngIf="rescrt">
+													  			<div class="alert alert-success">
+													  			<h4>{{ rescrt.status}}</h4>
+													  			</div>
+												  
+												              </div>
+												        </div>
+												        <div class="modal-footer">
+												          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												        </div>
+												      </div>
+												      
+												    </div>
+												  </div>
+												  
+												</div>
+		<!-- 		Create operation END         -->
+		<!-- Delete operation --> 
+												<div class="container" >
+												  
+												<!-- Button present in the iterator -->
+												  <!-- Modal -->
+												  <div class="modal fade" id="myModal2" role="dialog">
+												    <div class="modal-dialog">
+												    
+												      <!-- Modal content-->
+												      <div class="modal-content">
+												        <div class="modal-header">
+												          <button type="button" class="close" data-dismiss="modal">&times;</button>
+												          <h4 class="modal-title">DELETE Operation</h4>
+												        </div>
+												        						<div class="modal-body">
+																	          <input type="text" class="form-control" #temp1>
+																		<button (click)="onDelete(temp1.value)" class="btn btn-warning">
+												            <span class="glyphicon glyphicon-trash"></span>Delete</button>
+																		<div *ngIf="resdel">
+																		<div class="alert alert-success">
+																		<h4>{{resdel.status}}</h4>
+															            </div>
+															            </div>
+													  						  </div>
+												        <div class="modal-footer">
+												          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												        </div>
+												      </div>
+												      
+												    </div>
+												  </div>
+												  
+												</div>
+<!-- Delete operation END--> 
+		<!-- update operation --> 
+  
+																					 <div class="container">
+																					 <!-- Button present in the iterator -->
+																					
+																					  <!-- Modal -->
+																					  <div class="modal fade" id="myModal1" role="dialog">
+																					    <div class="modal-dialog">
+																					    
+																					      <!-- Modal content-->
+																					      <div class="modal-content">
+																					        <div class="modal-header">
+																					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+																					          <h4 class="modal-title">Record Updation</h4>
+																					        </div>
+																					        <div class="modal-body">
+																					          
+																					                        <div class="col-xs-6 ">
+																					          <label for="idl1">ID</label>
+																					          <input type="text" class="form-control" id="idl1" placeholder="Ex: 1" #id1>
+																					                          </div>
+																					        				       <div class="col-xs-6 ">
+																					          <label for="namel1">NAME</label>
+																					          <input type="text" class="form-control" id="namel1" placeholder="Ex: nath" #name1>
+																					                                </div>
+												                       										              <div class="col-xs-6 ">
+																						          <label for="salaryl1">SALARY</label>
+																						          <input type="text" class="form-control" id="salaryl1" placeholder="Ex:66000 " #salary1>
+																						                                   </div>
+												                       											            <div class="col-xs-6 ">
+																								     <label for="deptl1">DEPT</label>
+																								      <input type="text" class="form-control" id="deptl1" placeholder="Ex:ARMY " #dept1>
+																								                           </div>
+																					      <button (click)="onUpdate(id1.value,name1.value,salary1.value,dept1.value)" class="btn btn-warning">
+																					      <span class="glyphicon glyphicon-edit"></span>Update</button> 
+																					              <div *ngIf="resup">
+																					          <div class="alert alert-success">
+																					          <h4>{{resup.status}}</h4>
+																					          </div>
+																					  
+																					              </div>
+																					        </div>
+																					        <div class="modal-footer">
+																					          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																					        </div>
+																					      </div>
+																					      
+																					    </div>
+																					  </div>
+																					  
+																					</div>
+						<!-- update operation END--> 													 		
+						
+												
+																				
+									<table  *ngIf="tableEnable" class = "table table-hover ">
+								  <tr class="danger">
+									<th>ID</th>
+									<th>NAME</th> 
+									<th>SALARY</th>
+									<th>DEPT</th>
+								  </tr>
+
+								  <tbody  *ngFor="let item of pagedItems">
+									  <tr>
+										<td >{{item.id}}</td>
+										<td class="info">{{item.name}}</td>
+										<td >{{item.salary}}</td>
+										<td class="info">{{item.dept}}</td>
+										<td><!-- Trigger the modal with a button -->
+										<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal2">
+										<span class="glyphicon glyphicon-trash"></span>DELETE</button></td>	
+												       <td> <!-- Trigger the modal with a button -->
+												       <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#myModal1">
+												       <span class="glyphicon glyphicon-edit"></span>UPDATE</button></td>																			 
+										</tr>
+								   </tbody>
+								</table><br>
+ <div *ngIf="showstatus">
+<div class="container">
+  <h2>Alert</h2>
+  <div class="alert alert-danger alert-dismissible" id="myAlert">
+    {{status1}}
+    <a href="getAll" class="close">&times;</a>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+	$(".close").click(function(){
+        $("#myAlert").alert("close");
+    });
+	 
+});
+</script>
+</div>			
+			
+			
+			
+		
+            <!-- items being paged -->
+           
+
+            <!-- pager -->
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+   
+</div>
